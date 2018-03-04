@@ -1,0 +1,56 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	
+	{
+		int day, month, year, d; //инициализация переменных
+
+		cout << "Vvedite den" << endl; //вывод сообщения
+        cin >> day;                    //ввод дня
+		cout << "vvedite mesyac" << endl; //вывод сообщения
+		cin >> month;                      //ввод месяца
+		cout << "Vvedite god" << endl;     //вывод сообщения
+		cin >> year;                      // ввод года
+
+		int a = (14 - month) / 12;           // считаем переменную по формуле
+		int y = year - a;           // считаем переменную по формуле
+		int m = month + 12 * a - 2;           // считаем переменную по формуле
+
+		d = (day + y + y / 4 - y / 100 + y / 400 + (31 * m) / 12) % 7;           // считаем переменную по формуле
+		
+			switch (d)                                // выбираем из списка день недели по переменной d, которая считалась по формуле
+			{
+			case 0:               
+					cout << "Voskresene" << endl;
+					break;     // break - остановка выполнения и возврать значения
+			case 1:
+				cout << "Ponedelnik" << endl;
+				break;
+			case 2:
+				cout << "Vtornik" << endl;
+				break;
+			case 3:
+				cout << "Sreda" << endl;
+				break;
+			case 4:
+				cout << "Chetverg" << endl;
+				break;
+			case 5:
+				cout << "Pyatnica" << endl;
+				break;
+			case 6:
+				cout << "Subbota" << endl;
+				break;
+
+			}
+		
+		
+    }
+	system("pause");                                 // остановка программы 
+    return 0;
+}
+
